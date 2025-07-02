@@ -83,8 +83,7 @@ function App() {
               playsInline 
               className="hero-video"
             >
-              <source src="/AdobeStock_359292250.mov" type="video/quicktime" />
-              <source src="/AdobeStock_359292250.mov" type="video/mp4" />
+              <source src="/images/4066320-uhd_3840_2160_24fps.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

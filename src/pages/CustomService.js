@@ -11,9 +11,18 @@ const CustomService = ({ text, lang }) => {
             muted 
             loop 
             playsInline 
+            preload="metadata"
+            controls={false}
             className="hero-video"
+            onError={(e) => console.log('Video error:', e)}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
           >
             <source src="/images/4066320-uhd_3840_2160_24fps.mp4" type="video/mp4" />
+            <source src="/images/WhatsApp Video 2025-06-26 at 2.41.02 PM.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

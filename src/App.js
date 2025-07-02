@@ -81,7 +81,7 @@ function App() {
               muted 
               loop 
               playsInline 
-              preload="metadata"
+              preload="auto"
               controls={false}
               className="hero-video"
               onError={(e) => console.log('Video error:', e)}
@@ -91,8 +91,8 @@ function App() {
                 objectFit: 'cover'
               }}
             >
+              <source src="/images/WhatsApp Video 2025-06-26 at 2.41.02 PM (1).mp4" type="video/mp4" />
               <source src="/images/hero-video.mp4" type="video/mp4" />
-              <source src="/images/WhatsApp Video 2025-06-26 at 2.41.02 PM.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

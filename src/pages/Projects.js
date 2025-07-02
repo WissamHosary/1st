@@ -41,7 +41,7 @@ const Projects = ({ text, lang }) => {
       videos: [
         {
           title: "UIM XCAT Championship",
-          src: "/images/WhatsApp Video 2025-06-26 at 2.41.02 PM.mp4",
+          src: "/images/WhatsApp Video 2025-06-26 at 2.41.02 PM (1).mp4",
           description: "Historic UIM XCAT World Championship in Saudi Arabia"
         },
         {
@@ -147,8 +147,27 @@ const Projects = ({ text, lang }) => {
       {/* Hero Section with Video Background */}
       <section className="projects-hero">
         <div className="hero-video-background">
-          <video autoPlay muted loop className="hero-video">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            preload="auto"
+            className="hero-video"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
+            onError={(e) => {
+              console.log('Hero video error:', e);
+              // Fallback to a backup video if available
+              e.target.src = "/images/WhatsApp Video 2025-06-26 at 2.41.02 PM (1).mp4";
+            }}
+          >
             <source src="/images/WhatsApp Video 2025-06-26 at 2.41.03 PM.mp4" type="video/mp4" />
+            <source src="/images/WhatsApp Video 2025-06-26 at 2.41.02 PM (1).mp4" type="video/mp4" />
+            Your browser does not support the video tag.
           </video>
           <div className="hero-video-overlay"></div>
         </div>
@@ -266,9 +285,29 @@ const Projects = ({ text, lang }) => {
                   <div className="videos-grid">
                     {modalContent.videos.map((video, index) => (
                       <div key={index} className="video-item">
-                        <video controls>
+                        <video 
+                          controls
+                          preload="metadata"
+                          playsInline
+                          width="100%"
+                          muted={false}
+                          controlsList="nodownload"
+                          style={{
+                            maxWidth: '100%',
+                            height: 'auto',
+                            borderRadius: '8px',
+                            backgroundColor: '#000'
+                          }}
+                          onError={(e) => {
+                            console.log('Video error:', e);
+                            e.target.style.display = 'none';
+                          }}
+                          onLoadStart={() => console.log('Video loading started')}
+                          onCanPlay={() => console.log('Video can play')}
+                        >
                           <source src={video.src} type="video/mp4" />
-                          Your browser does not support the video tag.
+                          <source src={video.src.replace('.mp4', '.webm')} type="video/webm" />
+                          <p>Your browser does not support the video tag. <a href={video.src} target="_blank" rel="noopener noreferrer">Download the video</a></p>
                         </video>
                         <div className="video-info">
                           <h5>{video.title}</h5>

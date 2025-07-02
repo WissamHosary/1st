@@ -522,9 +522,9 @@ function App() {
                   <p><i className="fas fa-phone"></i> +966540777775</p>
                 </div>
                 <div className="social-links">
-                  <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-                  <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-                  <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+                                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
                   <a href="https://wa.me/966540777775" aria-label="WhatsApp"><i className="fab fa-whatsapp"></i></a>
                 </div>
               </div>
@@ -532,10 +532,10 @@ function App() {
             <div className="footer-bottom">
               <div className="footer-bottom-content">
                 <p>&copy; 2024 1st Luxury Logistics Services. All rights reserved.</p>
-                <div className="footer-bottom-links">
-                  <a href="#">Privacy Policy</a>
-                  <a href="#">Terms of Service</a>
-                </div>
+                              <div className="footer-bottom-links">
+                <a href="/privacy" rel="noopener noreferrer">Privacy Policy</a>
+                <a href="/terms" rel="noopener noreferrer">Terms of Service</a>
+              </div>
               </div>
             </div>
           </div>
